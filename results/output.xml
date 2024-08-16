@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-08-16T10:23:05.070759" rpa="false" schemaversion="5">
+<suite id="s1" name="ROBOT - API" source="C:\Users\vitor\Desktop\ROBOT - API">
+<suite id="s1-s1" name="Aula-PUT &amp; DELETE" source="C:\Users\vitor\Desktop\ROBOT - API\Aula-PUT &amp; DELETE">
+<suite id="s1-s1-s1" name="PUT-DELETE" source="C:\Users\vitor\Desktop\ROBOT - API\Aula-PUT &amp; DELETE\PUT-DELETE.robot">
+<test id="s1-s1-s1-t1" name="TC02 - Deleta produto" line="34">
+<kw name="Deletar produto de id 1" source_name="Deletar produto de id ${id}">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-08-16T10:23:06.714284" level="INFO">&amp;{headers} = { Content-type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-08-16T10:23:06.713284" elapsed="0.001998"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-08-16T10:23:06.716393" level="INFO">${DELETE_PRODUCT} = products/1</msg>
+<var>${DELETE_PRODUCT}</var>
+<arg>${DELETE_PRODUCT}</arg>
+<arg>id-produto-delete</arg>
+<arg>${id}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-08-16T10:23:06.715282" elapsed="0.002110"/>
+</kw>
+<kw name="DELETE" owner="RequestsLibrary">
+<msg time="2024-08-16T10:23:07.244439" level="INFO">DELETE Request : url=https://dummyjson.com//products/1 
+ path_url=//products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-08-16T10:23:07.245438" level="INFO">DELETE Response : url=https://dummyjson.com//products/1 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1723818186&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=L%2FyCbdsD1rcRERiztJV%2FIizIsw1TbrXHFnRugWVVlso%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1723818186&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=L%2FyCbdsD1rcRERiztJV%2FIizIsw1TbrXHFnRugWVVlso%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15552000; includeSubDomains', 'X-Download-Options': 'noopen', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '99', 'Date': 'Fri, 16 Aug 2024 14:23:06 GMT', 'X-Ratelimit-Reset': '1723818188', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"621-XyyM9oUv3H9tVa5fz1k1s1+XYAQ"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Via': '1.1 vegur'} 
+ body={"id":1,"title":"Essence Mascara Lash Princess","description":"The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.","category":"beauty","price":9.99,"discountPercentage":7.17,"rating":4.94,"stock":5,"tags":["beauty","mascara"],"brand":"Essence","sku":"RCH45Q1A","weight":2,"dimensions":{"width":23.17,"height":14.43,"depth":28.01},"warrantyInformation":"1 month warranty","shippingInformation":"Ships in 1 month","availabilityStatus":"Low Stock","reviews":[{"rating":2,"comment":"Very unhappy with my purchase!","date":"2024-05-23T08:56:21.618Z","reviewerName":"John Doe","reviewerEmail":"john.doe@x.dummyjson.com"},{"rating":2,"comment":"Not as described!","date":"2024-05-23T08:56:21.618Z","reviewerName":"Nolan Gonzalez","reviewerEmail":"nolan.gonzalez@x.dummyjson.com"},{"rating":5,"comment":"Very satisfied!","date":"2024-05-23T08:56:21.618Z","reviewerName":"Scarlett Wright","reviewerEmail":"scarlett.wright@x.dummyjson.com"}],"returnPolicy":"30 days return policy","minimumOrderQuantity":24,"meta":{"createdAt":"2024-05-23T08:56:21.618Z","updatedAt":"2024-05-23T08:56:21.618Z","barcode":"9164035109868","qrCode":"https://assets.dummyjson.com/public/qr-code.png"},"images":["https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"],"thumbnail":"https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png","isDeleted":true,"deletedOn":"2024-08-16T14:23:06.864Z"} 
+ </msg>
+<msg time="2024-08-16T10:23:07.246437" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<var>${Response}</var>
+<arg>url=${ROST}/${DELETE_PRODUCT}</arg>
+<arg>headers=&amp;{headers}</arg>
+<doc>Sends a DELETE request.</doc>
+<status status="PASS" start="2024-08-16T10:23:06.718392" elapsed="0.528045"/>
+</kw>
+<return>
+<value>${Response}</value>
+<status status="PASS" start="2024-08-16T10:23:07.246437" elapsed="0.000999"/>
+</return>
+<msg time="2024-08-16T10:23:07.247436" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<status status="PASS" start="2024-08-16T10:23:06.710285" elapsed="0.537151"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response.json()["isDeleted"]}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-08-16T10:23:07.249435" elapsed="0.001999"/>
+</kw>
+<status status="PASS" start="2024-08-16T10:23:06.707287" elapsed="0.545147"/>
+</test>
+<status status="PASS" start="2024-08-16T10:23:05.136596" elapsed="2.117836"/>
+</suite>
+<status status="PASS" start="2024-08-16T10:23:05.130600" elapsed="2.126831"/>
+</suite>
+<status status="PASS" start="2024-08-16T10:23:05.078753" elapsed="2.181676"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="ROBOT - API">ROBOT - API</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Aula-PUT &amp; DELETE">ROBOT - API.Aula-PUT &amp; DELETE</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="PUT-DELETE">ROBOT - API.Aula-PUT &amp; DELETE.PUT-DELETE</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
